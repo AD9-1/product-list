@@ -5,12 +5,15 @@ const Singledessert = ({ item, index }) => {
   const [windowsize, setWindowsize] = useState("");
   useEffect(() => {
     const handleresize = () => {
-      if (window.innerWidth < 600) {
+      if (window.innerWidth < 1000) {
         setWindowsize("mobile");
       } else setWindowsize("desktop");
     };
     handleresize();
     window.addEventListener("resize", handleresize);
+    return () => {
+      window.removeEventListener("resize", handleresize);
+    };
   }, []);
   return (
     <div className="singledessert">

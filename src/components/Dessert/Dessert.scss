@@ -3,16 +3,18 @@
 @use "../../styles/variables.scss" as *;
 
 .dessert {
-  background-color: aqua;
-  padding: 1rem;
+  //background-color: aqua;
+  padding: 1.2rem;
   h1 {
     font-family: "Redhat-bold";
   }
   &-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    column-gap: 40px;
-    row-gap: 20px;
-
+    column-gap: 30px;
+    row-gap: 40px;
+@include mobile{
+  grid-template-columns: auto;
+}
   }
 }

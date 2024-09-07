@@ -16,7 +16,7 @@ const AddtoCart = ({ index, singleItem }) => {
       {!getInCart ? (
         <button onClick={addtoCart} className="addtocart__button white">
           <img src="/assets/images/icon-add-to-cart.svg" className="addtocart__button--cart" />
-          <p>Add to Cart</p>
+          <p className="cart">Add to Cart</p>
         </button>
       ) : (
         <button className="addtocart__button saffron">

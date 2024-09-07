@@ -8,7 +8,7 @@
     position: relative;
     width: 100%;
     margin-bottom: 3rem;
-    height:fit-content;
+
     //background-color: antiquewhite;
     &__image {
       img {
@@ -17,7 +17,16 @@
       }
     }
   }
-  &__category{
-    
+  &__category {
+    color: $Rose400;
+    font-family: Redhat-regular;
+  }
+  &__name {
+    color: $Rose900;
+    font-family: Redhat-bold;
+  }
+  &__price {
+    color: #ca610b;
+    font-family: Redhat-semibold;
   }
 }

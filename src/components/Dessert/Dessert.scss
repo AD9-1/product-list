@@ -1,0 +1,18 @@
+@use "../../styles/font.scss" as *;
+@use "../../styles/mixins.scss" as *;
+@use "../../styles/variables.scss" as *;
+
+.dessert {
+  background-color: aqua;
+  padding: 1rem;
+  h1 {
+    font-family: "Redhat-bold";
+  }
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 40px;
+    row-gap: 20px;
+
+  }
+}

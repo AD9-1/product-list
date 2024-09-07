@@ -1,0 +1,53 @@
+@use "../../styles/font.scss" as *;
+@use "../../styles/variables.scss" as *;
+
+.addtocart {
+  width: fit-content;
+  position: absolute;
+  left: 20%;
+  top: 90%;
+
+  &__button {
+    padding: 1rem 2rem;
+    width: 15rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 30px;
+    outline: none;
+    &--cart {
+      width: 30px;
+    }
+  }
+  .white {
+    background-color: white;
+    border: 1px solid $Rose500;
+    font-family: Redhat-bold;
+    font-size: 1.3rem;
+    color: $Rose900;
+  }
+  .saffron {
+    background-color: #e87415;
+    padding: 1rem;
+    font-size: 1rem;
+    border: none;
+    justify-content: space-around;
+    &--negative {
+      display: flex;
+      width: 13px;
+      height: 13px;
+      border: 1px solid white;
+      padding: 0.4rem;
+      border-radius: 50%;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+    &__number {
+      color: white;
+      font-size: 1.2rem;
+    }
+  }
+}

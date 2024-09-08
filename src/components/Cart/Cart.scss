@@ -4,21 +4,87 @@
 
 .cart {
   background-color: white;
-  padding: 2rem;
-  height:fit-content;
+  padding: 24px;
+  height: fit-content;
   border-radius: 20px;
+  width: 50%;
+  position: sticky;
+  top: 22px;
   @include mobile {
     margin-top: 2rem;
+    padding: 2rem;
+    width: auto;
+  }
+  h1 {
+    font-family: "Redhat-bold";
+    color: $Red;
+    margin-bottom: 1rem;
+    font-size: clamp(1.4rem, 1vw + 1.2em, 1.4em);
   }
   &__empty {
     display: flex;
     flex-direction: column;
     align-items: center;
-    img{
-        width:40%;
+    img {
+      width: 40%;
     }
-    p{
-        color:
+    p {
+      color: $Rose500;
+      font-size: clamp(15px, 1vw + 1rem, 1.2em);
+      font-family: Redhat-semibold;
+      @media (max-width: 450px) {
+        font-size: 1rem;
+      }
+    }
+  }
+  &__exist {
+    &__list {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      h3 {
+        font-family: "Redhat-bold";
+        color: $Rose900;
+        margin-bottom: 5px;
+        font-size: clamp(1em, 1vw + 1em, 1.3em);
+        @media (max-width:1100px) and (min-width:1002px){
+            font-size: 18px;
+        }
+      }
+      .number-saffron{
+        font-size: 1.2em;
+        font-family: Redhat-semibold;
+    color:$Red;
+      }
+      .each-price{
+        font-size: 1em;
+        font-family: Redhat-semibold;
+        color:$Rose400;
+      }
+      .total-price{
+        font-size: 1em;
+        font-family: Redhat-bold;
+        color:$Rose500;
+        margin-top: 10px;
+      }
+      &--remove {
+        border: 1px solid $Rose500;
+        height: 10px;
+        width: 10px;
+        padding: 1%;
+        display: flex;
+        border-radius: 50%;
+
+        &:hover {
+          cursor: pointer;
+          border-color: black;
+          border-width: 2px;
+          img {
+            filter: invert(500%);
+          }
+        }
+      }
     }
   }
 }

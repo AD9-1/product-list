@@ -30,7 +30,7 @@
     }
   }
   &__price {
-    color: #ca610b;
+    color:$Red;
     font-family: Redhat-semibold;
     @include mobile{
       font-size: clamp(1rem, 1vw + 1rem, 1.5rem);

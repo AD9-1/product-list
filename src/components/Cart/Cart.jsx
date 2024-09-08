@@ -22,7 +22,6 @@ const Cart = () => {
         <div className="cart__exist">
           <article>
             <section className="cart__exist__list">
-              {" "}
               <div>
                 <h3>Classic Tiramisu</h3>
                 <p>
@@ -38,6 +37,19 @@ const Cart = () => {
             </section>
             <hr />
           </article>
+          <div className="cart__exist__total">
+            <p className="order-total">Order Total</p>
+            <p className="total">$46.50</p>
+          </div>
+          <div className="cart__exist__carbon--neutral">
+            <img src="/assets/images/icon-carbon-neutral.svg" alt="" />
+            <p className="carbon-neutral">
+              This is a{" "}
+              <span className="carbon-neutral--weighted">carbon-neutral</span>{" "}
+              delivery
+            </p>
+          </div>
+          <button> Confirm Order</button>
         </div>
       )}
     </div>

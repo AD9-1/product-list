@@ -1,3 +1,12 @@
+@use "../styles/mixins.scss" as *;
+
 .page{
-    
+    padding:3rem;
+  @media(min-width:200px) and (max-width:400px){
+    padding:1rem;
+  }
+   @include desktop{
+    display: flex;
+    padding:4rem;
+   } 
 }

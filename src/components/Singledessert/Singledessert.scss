@@ -8,8 +8,6 @@
     position: relative;
     width: 100%;
     margin-bottom: 3rem;
-
-    //background-color: antiquewhite;
     &__image {
       img {
         width: 100%;
@@ -20,13 +18,22 @@
   &__category {
     color: $Rose400;
     font-family: Redhat-regular;
+    @include mobile{
+      font-size: clamp(1rem, 1vw + 1rem, 1.4rem);
+    }
   }
   &__name {
     color: $Rose900;
     font-family: Redhat-bold;
+    @include mobile{
+      font-size: clamp(1rem, 1vw + 1rem, 1.5rem);
+    }
   }
   &__price {
     color: #ca610b;
     font-family: Redhat-semibold;
+    @include mobile{
+      font-size: clamp(1rem, 1vw + 1rem, 1.5rem);
+    }
   }
 }

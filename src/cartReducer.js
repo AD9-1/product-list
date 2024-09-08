@@ -12,9 +12,9 @@ export const decrementCart = (item) => ({
   type: "decrement",
   payload: item,
 });
-export const removeFromCart = (index) => ({
+export const removeFromCart = (item) => ({
   type: "removefromcart",
-  payload: index,
+  payload: item,
 });
 
 const initialState = { cart: [] };
@@ -23,20 +23,32 @@ const cartReducer = (state = initialState, action) => {
   switch (action.type) {
     case "addtocart":
       return {
-        cart: [...state.cart, { ...action.payload, quantity: 1 }],
+        cart: [
+          ...state.cart,
+          {
+            ...action.payload,
+            quantity: 1,
+            totalprice: parseFloat(action.payload.price),
+          },
+        ],
       };
     case "removefromcart":
       return {
         ...state,
-        cart: state.cart.filter((item, index) => index !== action.payload),
+        cart: state.cart.filter((item) => item !== action.payload),
       };
 
     case "increment":
       return {
         ...state,
-        cart: state.cart.map((item, index) => {
+        cart: state.cart.map((item) => {
           if (action.payload.name === item.name) {
-            return { ...item, quantity: item.quantity + 1 };
+            const newQuantity=item.quantity+1;
+            return {
+              ...item,
+              quantity:newQuantity,
+              totalprice: newQuantity * parseFloat(item.price),
+            };
           }
           return item;
         }),
@@ -45,10 +57,16 @@ const cartReducer = (state = initialState, action) => {
       return {
         ...state,
         cart: state.cart
-          .map((item, index) => {
+          .map((item) => {
             if (action.payload.name === item.name && item.quantity >= 1)
-              return { ...item, quantity: item.quantity - 1 };
-
+            {
+              const newQuantity=item.quantity-1;
+              return {
+                ...item,
+                quantity: newQuantity,
+                totalprice: newQuantity * parseInt(item.price),
+              };
+            }
             return item;
           })
           .filter(

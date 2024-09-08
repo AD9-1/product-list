@@ -1,15 +1,20 @@
 import React from "react";
 import "./Cart.scss";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { removeFromCart } from "../../cartReducer";
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
-
+const dispatch = useDispatch();
   const quantity = cart.reduce((s, cartItem) => {
     s = s + cartItem.quantity;
     console.log(s);
     return s;
   }, 0);
-  console.log(quantity);
+  console.log(cart);
+  const finalPrice = cart.reduce((s, cartItem) => {
+    s += cartItem.totalprice;
+    return s;
+  }, 0);
   return (
     <div className="cart">
       <h1>Your Cart({quantity})</h1>
@@ -20,26 +25,40 @@ const Cart = () => {
         </div>
       ) : (
         <div className="cart__exist">
-          <article>
-            <section className="cart__exist__list">
-              <div>
-                <h3>Classic Tiramisu</h3>
-                <p>
-                  <span className="number-saffron"> 1x</span>&nbsp;&nbsp;&nbsp;
-                  <span className="each-price">@$5.50</span>
-                  &nbsp;&nbsp;
-                  <span className="total-price">$5.50</span>
-                </p>
-              </div>
-              <div className="cart__exist__list--remove">
-                <img src="/assets/images/icon-remove-item.svg" alt="" />
-              </div>
-            </section>
-            <hr />
-          </article>
+          {cart?.map((cartItem) => {
+            return (
+              <article>
+                <section className="cart__exist__list">
+                  <div>
+                    <h3>{cartItem.name}</h3>
+                    <p>
+                      <span className="number-saffron">
+                        {" "}
+                        {cartItem.quantity}x
+                      </span>
+                      &nbsp;&nbsp;&nbsp;
+                      <span className="each-price">@${cartItem.price}</span>
+                      &nbsp;&nbsp;
+                      <span className="total-price">
+                        ${cartItem.totalprice}
+                      </span>
+                    </p>
+                  </div>
+                  <div
+                    className="cart__exist__list--remove"
+                    onClick={() => dispatch(removeFromCart(cartItem))}
+                  >
+                    <img src="/assets/images/icon-remove-item.svg" alt="" />
+                  </div>
+                </section>
+                <hr />
+              </article>
+            );
+          })}
+
           <div className="cart__exist__total">
             <p className="order-total">Order Total</p>
-            <p className="total">$46.50</p>
+            <p className="total">${finalPrice}</p>
           </div>
           <div className="cart__exist__carbon--neutral">
             <img src="/assets/images/icon-carbon-neutral.svg" alt="" />

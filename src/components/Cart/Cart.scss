@@ -48,24 +48,24 @@
         color: $Rose900;
         margin-bottom: 5px;
         font-size: clamp(1em, 1vw + 1em, 1.3em);
-        @media (max-width:1100px) and (min-width:1002px){
-            font-size: 18px;
+        @media (max-width: 1100px) and (min-width: 1002px) {
+          font-size: 18px;
         }
       }
-      .number-saffron{
+      .number-saffron {
         font-size: 1.2em;
         font-family: Redhat-semibold;
-    color:$Red;
+        color: $Red;
       }
-      .each-price{
+      .each-price {
         font-size: 1em;
         font-family: Redhat-semibold;
-        color:$Rose400;
+        color: $Rose400;
       }
-      .total-price{
+      .total-price {
         font-size: 1em;
         font-family: Redhat-bold;
-        color:$Rose500;
+        color: $Rose500;
         margin-top: 10px;
       }
       &--remove {
@@ -86,35 +86,42 @@
         }
       }
     }
-    &__total
-    {
-        display: flex;
-        justify-content: space-between;
-        .order-total{
-            font-size: clamp(.7rem, 1vw + 1.2em, 1.2em);
-            font-family: Redhat-semibold;
-            color:$Rose500;
-        }
-        .total{
-            font-size: clamp(.7rem, 1vw + 1.2em, 1.2em);
-            font-family: Redhat-bold;
-            color:$Rose900;
-        }
+    &__total {
+      display: flex;
+      justify-content: space-between;
+      margin-top:2em;
+      .order-total {
+        font-size: clamp(0.7rem, 1vw + 1.2em, 1.2em);
+        font-family: Redhat-semibold;
+        color: $Rose500;
+      }
+      .total {
+        font-size: clamp(0.7rem, 1vw + 1.2em, 1.2em);
+        font-family: Redhat-bold;
+        color: $Rose900;
+      }
     }
-    &__carbon--neutral{
-        margin-top: 1em;;
-        display: flex;
-        justify-content: center;
-        gap:1em;
-        padding:.8em;
-        background-color: $Rose100;
-        border-radius: 10px;
-        .carbon-neutral{
-       
-           
-                font-size: clamp(1em, 2vw + 1em,.8em );
-            
-        }
+    &__carbon--neutral {
+      margin: 2em 0;
+      display: flex;
+      justify-content: center;
+      gap: 1em;
+      padding: 0.8em;
+      background-color: $Rose100;
+      border-radius: 10px;
+      .carbon-neutral {
+        font-size: clamp(10px, 1vw + 4em, 15px);
+      }
+    }
+    button{
+      width:100%;
+      padding:1em;
+      border-radius: 30px;
+      font-size: 1em;
+      font-family:Redhat-semibold;
+      color:white;
+      background-color: $Red;
+      border: 0;
     }
   }
 }

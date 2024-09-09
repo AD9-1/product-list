@@ -1,7 +1,12 @@
 import React from "react";
 import "./OrderConfModal.scss";
+import { closeModal } from "../../cartReducer";
+import { useDispatch } from "react-redux";
 const OrderConfModal = ({ cart }) => {
-  console.log(cart);
+  const dispatch = useDispatch();
+  const handleClick = () => {
+    dispatch(closeModal());
+  };
   return (
     <div className="modal">
       <div className="modal__tick">
@@ -37,7 +42,9 @@ const OrderConfModal = ({ cart }) => {
         </div>
       </div>
 
-      <button className="modal__start">Start New Order</button>
+      <button onClick={handleClick} className="modal__start">
+        Start New Order
+      </button>
     </div>
   );
 };

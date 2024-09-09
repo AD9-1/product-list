@@ -1,5 +1,7 @@
 import { legacy_createStore as createStore } from "redux";
+
 ///Actions
+
 export const addToCart = (item) => ({
   type: "addtocart",
   payload: item,
@@ -16,15 +18,20 @@ export const removeFromCart = (item) => ({
   type: "removefromcart",
   payload: item,
 });
-
-const initialState = { cart: [] };
+export const openModal = () => ({
+  type: "openmodal",
+});
+export const closeModal = () => ({
+  type: "closemodal",
+});
+const initialState = { cart: [], isModalOpen: false };
 
 const cartReducer = (state = initialState, action) => {
   switch (action.type) {
     case "addtocart":
       return {
+        ...state,
         cart: [
-          ...state.cart,
           {
             ...action.payload,
             quantity: 1,
@@ -43,10 +50,10 @@ const cartReducer = (state = initialState, action) => {
         ...state,
         cart: state.cart.map((item) => {
           if (action.payload.name === item.name) {
-            const newQuantity=item.quantity+1;
+            const newQuantity = item.quantity + 1;
             return {
               ...item,
-              quantity:newQuantity,
+              quantity: newQuantity,
               totalprice: newQuantity * parseFloat(item.price),
             };
           }
@@ -58,9 +65,8 @@ const cartReducer = (state = initialState, action) => {
         ...state,
         cart: state.cart
           .map((item) => {
-            if (action.payload.name === item.name && item.quantity >= 1)
-            {
-              const newQuantity=item.quantity-1;
+            if (action.payload.name === item.name && item.quantity >= 1) {
+              const newQuantity = item.quantity - 1;
               return {
                 ...item,
                 quantity: newQuantity,
@@ -72,6 +78,16 @@ const cartReducer = (state = initialState, action) => {
           .filter(
             (item) => !(action.payload.name === item.name && item.quantity == 0)
           ),
+      };
+    case "openmodal":
+      return {
+        cart: state.cart,
+        isModalOpen: true,
+      };
+    case "closemodal":
+      return {
+        cart: [],
+        isModalOpen: false,
       };
     default:
       return state;

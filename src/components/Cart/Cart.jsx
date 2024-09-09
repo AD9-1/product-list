@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import "./Cart.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { removeFromCart } from "../../cartReducer";
+import { removeFromCart, openModal, closeModal } from "../../cartReducer";
 import OrderConfModal from "../OrderConfModal/OrderConfModal";
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
-const dispatch = useDispatch();
-const[modalOpen,setmodalOpen]=useState(false)
+  const modalView = useSelector((state) => state.isModalOpen);
+  const dispatch = useDispatch();
+  console.log(modalView);
   const quantity = cart.reduce((s, cartItem) => {
     s = s + cartItem.quantity;
     return s;
@@ -16,9 +17,9 @@ const[modalOpen,setmodalOpen]=useState(false)
     s += cartItem.totalprice;
     return s;
   }, 0);
-  const handleModal=()=>{
-setmodalOpen(true);
-  }
+  const handleModal = () => {
+    dispatch(openModal());
+  };
   return (
     <div className="cart">
       <h1>Your Cart({quantity})</h1>
@@ -44,7 +45,7 @@ setmodalOpen(true);
                       <span className="each-price">@${cartItem.price}</span>
                       &nbsp;&nbsp;
                       <span className="total-price">
-                        ${cartItem.totalprice}
+                        {`$${cartItem.totalprice.toFixed(2)}`}{" "}
                       </span>
                     </p>
                   </div>
@@ -62,7 +63,7 @@ setmodalOpen(true);
 
           <div className="cart__exist__total">
             <p className="order-total">Order Total</p>
-            <p className="total">${finalPrice}</p>
+            <p className="total">{`$${finalPrice.toFixed(2)}`}</p>
           </div>
           <div className="cart__exist__carbon--neutral">
             <img src="/assets/images/icon-carbon-neutral.svg" alt="" />
@@ -75,7 +76,7 @@ setmodalOpen(true);
           <button onClick={handleModal}> Confirm Order</button>
         </div>
       )}
-      {modalOpen &&<OrderConfModal cart={cart}/>}
+      {modalView && <OrderConfModal cart={cart} modalView={modalView} />}
     </div>
   );
 };

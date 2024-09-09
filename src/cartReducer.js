@@ -30,8 +30,9 @@ const cartReducer = (state = initialState, action) => {
   switch (action.type) {
     case "addtocart":
       return {
-        ...state,
+        isModalOpen:false,
         cart: [
+          ...state.cart,
           {
             ...action.payload,
             quantity: 1,

@@ -2,17 +2,21 @@ import React, { memo, useEffect, useState } from "react";
 import "./AddtoCart.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, incrementCart, decrementCart } from "../../cartReducer";
-const AddtoCart = memo(({ index, singleItem }) => {
+const AddtoCart = ({ singleItem, setClicked }) => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
 
   const itemInCart = cart.find((item) => item.name === singleItem.name);
-
+  if (!itemInCart) {
+    setClicked(false);
+  }
   const addtoCart = () => {
     dispatch(addToCart(singleItem));
+    setClicked(true);
   };
   const handleIncrement = () => {
     dispatch(incrementCart(singleItem));
+    setClicked(true);
   };
   const handleDecrement = () => {
     dispatch(decrementCart(singleItem));
@@ -40,6 +44,6 @@ const AddtoCart = memo(({ index, singleItem }) => {
       )}
     </div>
   );
-});
+};
 
 export default AddtoCart;

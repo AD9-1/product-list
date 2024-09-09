@@ -1,13 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Cart.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { removeFromCart, openModal, closeModal } from "../../cartReducer";
+import { removeFromCart, openModal } from "../../cartReducer";
 import OrderConfModal from "../OrderConfModal/OrderConfModal";
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
   const modalView = useSelector((state) => state.isModalOpen);
   const dispatch = useDispatch();
-  console.log(modalView);
   const quantity = cart.reduce((s, cartItem) => {
     s = s + cartItem.quantity;
     return s;

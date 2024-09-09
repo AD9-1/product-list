@@ -1,5 +1,9 @@
+@use "../../styles/mixins.scss" as *;
+@use "../../styles/font.scss" as *;
+@use "../../styles/variables.scss" as *;
 .modal {
     position: fixed;
+    width:40vw;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -7,5 +11,49 @@
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 1000; // Ensure it's on top
+    z-index: 1000; 
+    &__tick{
+        img{
+            width:30px
+        }
+        margin-bottom:12px;
+    }
+&__statement{
+    .order--confirm{
+margin-bottom: 0;
+color:$Rose900;
+font-size: 1.6em;
+    }
+    .enjoy--food{
+        margin-bottom: 22px;
+        color:$Rose500;
+        font-size:12px;
+    }
+}
+&__list{
+   width:92%;
+   padding:1em;
+   background-color: $Rose100; 
+   margin:auto;
+   &__article{
+    &--section{
+       display:grid;
+       grid-template-columns: auto 1fr auto; 
+       align-items: center;
+       .thumbnail-image{
+        img{
+            width:40px;
+        }
+       }
+       .food-des{
+        margin-left: 10px;
+        .food{
+            font-size: .8em;
+            color:$Rose900;
+            font-family:Redhat-bold;
+        }
+       }
+    }
+   }
+}
 }

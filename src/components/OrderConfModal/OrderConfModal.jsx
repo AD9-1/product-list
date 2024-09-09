@@ -21,7 +21,8 @@ const OrderConfModal = ({ cart }) => {
               <p className="food">Classic Tiramisu</p>
               <p className="quantity-price">
                 <span className="quantity-price--number">1x</span>
-                &nbsp;&nbsp;&nbsp;<span className="quantity-price--eachprice">@$5.50</span>
+                &nbsp;&nbsp;&nbsp;
+                <span className="quantity-price--eachprice">@$5.50</span>
               </p>
             </div>
             <div>
@@ -30,7 +31,13 @@ const OrderConfModal = ({ cart }) => {
           </section>
           <hr />
         </article>
+        <div className="modal__list__totalorder">
+          <p className="statement--order">Order Total</p>
+          <p className="total--price">$46.50</p>
+        </div>
       </div>
+
+      <button className="modal__start">Start New Order</button>
     </div>
   );
 };

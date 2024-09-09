@@ -1,20 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Cart.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { removeFromCart } from "../../cartReducer";
+import OrderConfModal from "../OrderConfModal/OrderConfModal";
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
 const dispatch = useDispatch();
+const[modalOpen,setmodalOpen]=useState(false)
   const quantity = cart.reduce((s, cartItem) => {
     s = s + cartItem.quantity;
-    console.log(s);
     return s;
   }, 0);
-  console.log(cart);
+
   const finalPrice = cart.reduce((s, cartItem) => {
     s += cartItem.totalprice;
     return s;
   }, 0);
+  const handleModal=()=>{
+setmodalOpen(true);
+  }
   return (
     <div className="cart">
       <h1>Your Cart({quantity})</h1>
@@ -68,9 +72,10 @@ const dispatch = useDispatch();
               delivery
             </p>
           </div>
-          <button> Confirm Order</button>
+          <button onClick={handleModal}> Confirm Order</button>
         </div>
       )}
+      {modalOpen &&<OrderConfModal cart={cart}/>}
     </div>
   );
 };

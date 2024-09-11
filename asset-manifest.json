@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/product-list/static/css/main.d4b20186.css",
+    "main.js": "/product-list/static/js/main.62ab320a.js",
+    "static/js/453.b1578c88.chunk.js": "/product-list/static/js/453.b1578c88.chunk.js",
+    "static/media/RedHatText-Regular.ttf": "/product-list/static/media/RedHatText-Regular.1114e0c17a9d15f2014a.ttf",
+    "static/media/RedHatText-SemiBold.ttf": "/product-list/static/media/RedHatText-SemiBold.50846cf1a3346a806070.ttf",
+    "static/media/RedHatText-Bold.ttf": "/product-list/static/media/RedHatText-Bold.710fa6829252d684327b.ttf",
+    "index.html": "/product-list/index.html",
+    "main.d4b20186.css.map": "/product-list/static/css/main.d4b20186.css.map",
+    "main.62ab320a.js.map": "/product-list/static/js/main.62ab320a.js.map",
+    "453.b1578c88.chunk.js.map": "/product-list/static/js/453.b1578c88.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d4b20186.css",
+    "static/js/main.62ab320a.js"
+  ]
+}

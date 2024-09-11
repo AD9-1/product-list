@@ -15,8 +15,10 @@
   @include mobile {
     width:95%;
     padding: 2rem 1.5rem;
-    top: 40%;
+    top:63%;
+    transform: translate(-50%, -55%);
     border-radius: 20px;
+  
   }
   &__tick {
     img {
@@ -33,7 +35,7 @@
       color: $Rose900;
       font-size: 1.6em;
       @include mobile{
-        font-size: 3rem;
+        font-size: 2.8rem;
       }
     }
     .enjoy--food {
@@ -52,17 +54,21 @@
     background-color: $Rose50;
     margin: auto;
     border-radius: 10px;
-    margin-bottom: 1em;
+    margin-bottom: 1.4em;
+    max-height:300px;
+    scroll-behavior: smooth;
+    overflow-y: auto;
     &__article {
       &--section {
         display: grid;
         grid-template-columns: auto 1fr auto;
         align-items: center;
+        padding:1em 0;
         .thumbnail-image {
           img {
             width: 40px;
             @include mobile{
-              
+              width:4em;
             }
           }
 
@@ -73,6 +79,10 @@
             font-size: 0.8em;
             color: $Rose900;
             font-family: Redhat-bold;
+            @include mobile{
+              font-size: 1rem;
+              font-family: Redhat-semibold;
+            }
           }
           .quantity-price--number {
             color: $Red;
@@ -82,11 +92,17 @@
             color: $Rose500;
             font-family: Redhat-regular;
             font-size: 0.8rem;
+            @include mobile{
+              font-size: 1rem;      
+            }
           }
         }
         .tot-price {
           color: $Rose900;
           font-family: redhat-bold;
+          @include mobile{
+            font-family: Redhat-semibold;
+          }
         }
       }
     }
@@ -98,6 +114,9 @@
         font-size: 0.8rem;
         color: $Rose900;
         font-family: Redhat-semibold;
+        @include mobile{
+       font-size: 1rem;
+        }
       }
       .total--price {
         font-size: 1.2rem;

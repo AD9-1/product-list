@@ -22,7 +22,7 @@ const OrderConfModal = ({ cart }) => {
           <article className="modal__list__article">
             <section className="modal__list__article--section">
               <div className="thumbnail-image">
-                <img src="/assets/images/image-macaron-thumbnail.jpg" alt="" />
+                <img src={cartItem.image.thumbnail} alt="" />
               </div>
               <div className="food-des">
                 <p className="food">{cartItem.name}</p>

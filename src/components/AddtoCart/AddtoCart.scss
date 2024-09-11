@@ -8,10 +8,10 @@
   position: absolute;
   left: 16%;
   bottom: -6%;
+
   @include mobile {
     left: 19%;
     min-width: 60%;
-
   }
 
   &__button {
@@ -22,9 +22,15 @@
     gap: 5px;
     border-radius: 30px;
     outline: none;
+
     @include mobile {
       padding: 1.2rem 0rem;
       border-radius: 40px;
+    }
+    .cartp {
+      &:hover {
+        color: $Red;
+      }
     }
   }
   .white {
@@ -34,6 +40,10 @@
     font-size: 1rem;
     color: $Rose900;
     justify-content: center;
+    &:hover {
+      border: 1.6px solid $Red;
+      cursor: pointer;
+    }
   }
   .saffron {
     background-color: $Red;
@@ -48,7 +58,7 @@
       border: 2px solid white;
       padding: 0.2rem;
       border-radius: 50%;
-     
+
       .icon {
         &:hover {
           fill: $Red; // Change color on hover

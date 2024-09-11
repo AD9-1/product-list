@@ -19,7 +19,6 @@ const Singledessert = ({ item, index }) => {
   return (
     <div className="singledessert">
       <section className="singledessert__section">
-        {" "}
         <div className={`singledessert__section__image ${clicked?"image-clicked":""}`}>
           {windowsize === "desktop" ? (
             <img src={item.image.desktop} alt="" />

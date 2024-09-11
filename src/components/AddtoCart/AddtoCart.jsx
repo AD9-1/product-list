@@ -34,11 +34,26 @@ const AddtoCart = ({ singleItem, setClicked }) => {
       ) : (
         <button className="addtocart__button saffron">
           <section className="saffron--negative" onClick={handleDecrement}>
-            <img src="/assets/images/icon-decrement-quantity.svg" alt="" />
+            <svg
+           
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="white" // Initial color
+              className="icon"
+            >
+              <path d="M19 13H5v-2h14v2z" />
+            </svg>
           </section>
           <p className="saffron__number">{itemInCart.quantity}</p>
           <section className="saffron--negative" onClick={handleIncrement}>
-            <img src="/assets/images/icon-increment-quantity.svg" alt="" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 -960 960 960"
+              fill="white"
+              className="icon"
+            >
+              <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z" />
+            </svg>
           </section>
         </button>
       )}

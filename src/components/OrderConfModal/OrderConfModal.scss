@@ -12,6 +12,9 @@
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  scroll-behavior: smooth;
+  max-height: 78vh;
+  overflow-y: auto;
   @include mobile {
     width:95%;
     padding: 2rem 1.5rem;
@@ -33,7 +36,7 @@
     .order--confirm {
       margin-bottom: 0;
       color: $Rose900;
-      font-size: 1.6em;
+      font-size:2em;
       @include mobile{
         font-size: 2.8rem;
       }
@@ -41,7 +44,7 @@
     .enjoy--food {
       margin-bottom: 22px;
       color: $Rose500;
-      font-size: 12px;
+      font-size: 16px;
       @include mobile{
         font-size: 1.1em;
       }
@@ -66,7 +69,7 @@
         padding:1em 0;
         .thumbnail-image {
           img {
-            width: 40px;
+            width: 4em;
             @include mobile{
               width:4em;
             }
@@ -76,22 +79,22 @@
         .food-des {
           margin-left: 10px;
           .food {
-            font-size: 0.8em;
+            font-size: 1em;
             color: $Rose900;
             font-family: Redhat-bold;
             @include mobile{
-              font-size: 1rem;
               font-family: Redhat-semibold;
             }
           }
           .quantity-price--number {
             color: $Red;
             font-family: Redhat-semibold;
+            font-size: 1.4em;
           }
           .quantity-price--eachprice {
             color: $Rose500;
             font-family: Redhat-regular;
-            font-size: 0.8rem;
+            font-size:1.2rem;
             @include mobile{
               font-size: 1rem;      
             }
@@ -100,10 +103,14 @@
         .tot-price {
           color: $Rose900;
           font-family: redhat-bold;
+          font-size: 1.2245em;
           @include mobile{
             font-family: Redhat-semibold;
           }
         }
+      }
+      hr{
+        background-color: $Rose50;
       }
     }
     &__totalorder {
@@ -111,7 +118,7 @@
       display: flex;
       justify-content: space-between;
       .statement--order {
-        font-size: 0.8rem;
+        font-size: 1.4rem;
         color: $Rose900;
         font-family: Redhat-semibold;
         @include mobile{
@@ -133,6 +140,6 @@
     background-color: $Red;
     color: white;
     font-family: Redhat-regular;
-    font-size: 1em;
+    font-size: 1.2em;
   }
 }

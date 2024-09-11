@@ -4,7 +4,7 @@
 
 .modal {
   position: fixed;
-  width: 40%;
+  width: 50%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -12,10 +12,18 @@
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  //z-index: 1000;
+  @include mobile {
+    width:95%;
+    padding: 2rem 1.5rem;
+    top: 40%;
+    border-radius: 20px;
+  }
   &__tick {
     img {
       width: 30px;
+      @include mobile{
+        width:auto;
+      }
     }
     margin-bottom: 12px;
   }
@@ -24,12 +32,19 @@
       margin-bottom: 0;
       color: $Rose900;
       font-size: 1.6em;
+      @include mobile{
+        font-size: 3rem;
+      }
     }
     .enjoy--food {
       margin-bottom: 22px;
       color: $Rose500;
       font-size: 12px;
+      @include mobile{
+        font-size: 1.1em;
+      }
     }
+    
   }
   &__list {
     width: 92%;
@@ -46,7 +61,11 @@
         .thumbnail-image {
           img {
             width: 40px;
+            @include mobile{
+              
+            }
           }
+
         }
         .food-des {
           margin-left: 10px;

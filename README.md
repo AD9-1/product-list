@@ -18,15 +18,15 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshots/desktop1.png)[](./screenshots/desktop2.png)[](./screenshots/mobile.png)
-[](./screenshots/mobile1.png)
+![](./screenshots/desktop1.png)![](./screenshots/desktop2.png)![](./screenshots/mobile.png)
+![](./screenshots/mobile1.png)
 
 
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/AD9-1/product-list)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [gitHub](https://github.com/AD9-1/product-list)
+- Live Site URL: [product-list](https://dessert-list.netlify.app/)
 
 ## My process
 
@@ -150,7 +150,7 @@ export default store;
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
+- Website - [Add your name here](https://dessert-list.netlify.app/)
 - Frontend Mentor - [@AD9-1](https://www.frontendmentor.io/profile/AD9-1)
 
 
